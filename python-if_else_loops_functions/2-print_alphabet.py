@@ -1,4 +1,5 @@
 #!/usr/bin/python3
-letter = 97
-for i in range(97, 123):
+inicio = ord('a')
+final = ord('z')
+for i in range(inicio, final):
     print(chr(i), end = "")
