@@ -5,4 +5,4 @@ if __name__ == '__main__':
     i = 0
     for arg in argv[1:]:
         i += int(arg)
-        print(i)
+    print(i)
