@@ -38,10 +38,10 @@ class Square():
     def position(self, value):
         string = "position must be a tuple of 2 positive integers"
         if type(value) is not tuple:
-            raise TypeError(string)
+            raise TypeError("position must be a tuple of 2 positive integers")
         for i in value:
             if type(i) is not int or i < 0 or len(value) != 2:
-                raise ValueError("")
+                raise ValueError(string)
         self.__position = value
 
     def my_print(self):
