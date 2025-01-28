@@ -38,7 +38,7 @@ class Square():
     def position(self, value):
         string = "position must be a tuple of 2 positive integers"
         if type(value) is not tuple:
-            raise TypeError(f"{string}")
+            raise TypeError(string)
         for i in value:
             if type(i) is not int or i < 0 or len(value) != 2:
                 raise ValueError("")
