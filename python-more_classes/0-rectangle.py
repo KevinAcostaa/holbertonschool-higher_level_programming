@@ -5,4 +5,7 @@ class Rectangle
 
 
 class Rectangle():
+    """
+    class Square
+    """
     pass
