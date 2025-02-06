@@ -1,23 +1,46 @@
-Test 1: Validate integer_validator with valid values
-    - Call integer_validator with name "width" and value 5
-    - Expected: No exception raised
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-Test 2: Validate integer_validator with valid values
-    - Call integer_validator with name "height" and value 10
-    - Expected: No exception raised
+>>> g = BaseGeometry()
 
-Test 3: Validate integer_validator with invalid value (string instead of int)
-    - Call integer_validator with name "name" and value "John"
-    - Expected: TypeError: name must be an integer
 
-Test 4: Validate integer_validator with invalid value (0 is not valid)
-    - Call integer_validator with name "age" and value 0
-    - Expected: ValueError: age must be greater than 0
+>>> g.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
 
-Test 5: Validate integer_validator with invalid value (negative integer)
-    - Call integer_validator with name "distance" and value -4
-    - Expected: ValueError: distance must be greater than 0
+>>> g.integer_validator("name", 10)
 
-Test 6: Call area() method
-    - Call area on an instance of BaseGeometry
-    - Expected: Exception with message "area() is not implemented"
+>>> g.integer_validator("name", -10) 
+Traceback (most recent call last):
+ValueError: name must be greater than 0
+
+>>> g.integer_validator("name", 0) 
+Traceback (most recent call last):
+ValueError: name must be greater than 0
+
+>>> g.integer_validator("name", "str")
+Traceback (most recent call last):
+TypeError: name must be an integer
+
+>>> g.integer_validator("name")
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> g.integer_validator("name", (4,))
+Traceback (most recent call last):
+TypeError: name must be an integer
+
+>>> g.integer_validator("name", [3])
+Traceback (most recent call last):
+TypeError: name must be an integer
+
+>>> g.integer_validator("name", None)
+Traceback (most recent call last):
+TypeError: name must be an integer
+
+>>> g.integer_validator("name", True)
+Traceback (most recent call last):
+TypeError: name must be an integer
+
+>>> g.integer_validator("name", {2,3})
+Traceback (most recent call last):
+TypeError: name must be an integer
