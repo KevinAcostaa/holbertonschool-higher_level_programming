@@ -1,0 +1,23 @@
+Test 1: Validate integer_validator with valid values
+    - Call integer_validator with name "width" and value 5
+    - Expected: No exception raised
+
+Test 2: Validate integer_validator with valid values
+    - Call integer_validator with name "height" and value 10
+    - Expected: No exception raised
+
+Test 3: Validate integer_validator with invalid value (string instead of int)
+    - Call integer_validator with name "name" and value "John"
+    - Expected: TypeError: name must be an integer
+
+Test 4: Validate integer_validator with invalid value (0 is not valid)
+    - Call integer_validator with name "age" and value 0
+    - Expected: ValueError: age must be greater than 0
+
+Test 5: Validate integer_validator with invalid value (negative integer)
+    - Call integer_validator with name "distance" and value -4
+    - Expected: ValueError: distance must be greater than 0
+
+Test 6: Call area() method
+    - Call area on an instance of BaseGeometry
+    - Expected: Exception with message "area() is not implemented"
