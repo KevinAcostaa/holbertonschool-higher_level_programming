@@ -1,46 +1,60 @@
->>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> BaseGeometry = _import_('7-base_geometry').BaseGeometry
 
->>> g = BaseGeometry()
-
-
->>> g.area()
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("", "")
 Traceback (most recent call last):
+    ...
+TypeError:  must be an integer
+
+>>> bg.integer_validator("my_int", "")
+Traceback (most recent call last):
+    ...
+TypeError: my_int must be an integer
+
+>>> bg = BaseGeometry()
+>>> bg.area()
+Traceback (most recent call last):
+    ...
 Exception: area() is not implemented
 
->>> g.integer_validator("name", 10)
-
->>> g.integer_validator("name", -10) 
+>>> bg = BaseGeometry()
+>>> bg.integer_validator()
 Traceback (most recent call last):
-ValueError: name must be greater than 0
+    ...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
->>> g.integer_validator("name", 0) 
-Traceback (most recent call last):
-ValueError: name must be greater than 0
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("age", 1)
 
->>> g.integer_validator("name", "str")
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("age", 0)
 Traceback (most recent call last):
-TypeError: name must be an integer
+    ...
+ValueError: age must be greater than 0
 
->>> g.integer_validator("name")
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("age", (4,))
 Traceback (most recent call last):
-TypeError: integer_validator() missing 1 required positional argument: 'value'
+    ...
+TypeError: age must be an integer
 
->>> g.integer_validator("name", (4,))
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("age", [3])
 Traceback (most recent call last):
-TypeError: name must be an integer
+    ...
+TypeError: age must be an integer
 
->>> g.integer_validator("name", [3])
-Traceback (most recent call last):
-TypeError: name must be an integer
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("age", True)
 
->>> g.integer_validator("name", None)
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("age", [3, 4])
 Traceback (most recent call last):
-TypeError: name must be an integer
+    ...
+TypeError: age must be an integer
 
->>> g.integer_validator("name", True)
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("age", None)
 Traceback (most recent call last):
-TypeError: name must be an integer
-
->>> g.integer_validator("name", {2,3})
-Traceback (most recent call last):
-TypeError: name must be an integer
+    ...
+TypeError: age must be an integer
