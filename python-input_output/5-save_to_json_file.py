@@ -11,7 +11,7 @@ def save_to_json_file(my_obj, filename):
     """
     if isinstance(my_obj, set):
         my_obj_str = list(my_obj)
-    
+
     my_obj_str = json.dumps(my_obj)
     with open(filename, 'w') as file:
         try:
