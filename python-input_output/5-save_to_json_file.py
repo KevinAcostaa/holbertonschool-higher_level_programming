@@ -15,4 +15,3 @@ def save_to_json_file(my_obj, filename):
             file.write(my_obj_str)
         finally:
             file.close()
-
