@@ -37,11 +37,14 @@ def post_user():
 
     if not isinstance(new_user, str) or new_user == "":
         return jsonify({"error": "Username is required"}), 400
-    
+
+    if new_user in users:
+        return jsonify({"error": "Username already exists"}), 400
+
     users[new_user] = {"username": new_user, "name": new_name, "age": new_age, "city": new_city}
 
     message = {"message": "User added", "user": users[new_user]}
     return jsonify(message), 201
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
