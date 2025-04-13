@@ -7,6 +7,7 @@ This module connects to a MySQL database
 import MySQLdb
 import sys
 
+
 def find_state(username, password, db_name, state_name):
     """
     This module connects to a MySQL database
