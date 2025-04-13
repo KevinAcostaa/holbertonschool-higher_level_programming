@@ -1,12 +1,15 @@
 #!/usr/bin/python3
-
+"""
+This module connects to a MySQL database
+"""
 import MySQLdb
 import sys
 
 
 def list_states(username, password, db_name):
-    
-    
+    """
+    This module connects to a MySQL database
+    """
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
