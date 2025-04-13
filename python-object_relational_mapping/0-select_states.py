@@ -2,8 +2,6 @@
 """
 This module connects to a MySQL database
 """
-import pymysql
-pymysql.install_as_MySQLdb()
 import MySQLdb
 import sys
 
